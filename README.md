@@ -7,4 +7,9 @@
 
 ## Usage
 
+- `npm install`  
 - `npm start`  
+
+## Production deployment
+
+- Make sur `ORIGIN` env varialbe corresponds to you domain (and port if needed)
