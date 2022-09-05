@@ -29,7 +29,7 @@ class EmailProvider {
         this.transporter = nodemailer.createTransport(options);
       })
       .catch((err) => {
-        if (process.env.DEVELOP) console.error('[ERROR]: Creating mailer instance', err);
+        if (process.env.DEVELOP === 'dev') console.error('[ERROR]: Creating mailer instance', err);
         else console.error('[ERROR]: Creating mailer instance');
       });
   }
