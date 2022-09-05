@@ -1,19 +1,18 @@
 module.exports = {
-  parser: 'babel-eslint',
   extends: ['airbnb'],
   settings: {
     'import/resolver': {
       node: {
         paths: ['./src'],
-      }
-    }
+      },
+    },
   },
   parserOptions: {
-    ecmaVersion: 6,
+    ecmaVersion: 8,
   },
   env: {
     es6: true,
-    browser: true,
+    node: true,
   },
   rules: {
     camelcase: 'off',

@@ -55,4 +55,4 @@ async function formContactHandler(req, res) {
 app.post('/api/form/contact', formContactHandler);
 app.listen(port);
 
-console.info('[INFO]: >>> Server listening to port', port);
+console.info('[INFO]: >>> Server listening on port', port);
