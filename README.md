@@ -10,13 +10,16 @@
 - `npm install`  
 - `npm start`  
 
-## Production deployment
+### Production deployment
 
 - Make sur `ORIGIN` env varialbe corresponds to you domain (and port if needed)  
 - Check running ports: `sudo lsof -i -P -n | grep LISTEN`  
 
-## Deploy with docker
+### Deploy with docker
 
 - Build: `docker build -t emailserver .`  
 - Run:  `docker run -d -p3000:3000 emailserver`  
 
+## Use with Gmail
+
+- https://miracleio.me/snippets/use-gmail-with-nodemailer
