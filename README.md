@@ -13,3 +13,8 @@
 ## Production deployment
 
 - Make sur `ORIGIN` env varialbe corresponds to you domain (and port if needed)
+
+## Deploy with docker
+
+- Build: `docker build -t emailserver .`  
+- Run:  `docker run -p3000:3000 emailserver`  

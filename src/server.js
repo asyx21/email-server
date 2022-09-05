@@ -24,7 +24,7 @@ function hasDangerousCharacter(body) {
   if (process.env.DEVELOP) console.info('[INFO]: request body', body);
   let dangerous = false;
   Object.values(body).forEach((val) => {
-    if (val.includes('<') || val.includes('>')) dangerous = true;
+    if (val.includes && (val.includes('<') || val.includes('>'))) dangerous = true;
   });
   return dangerous;
 }
