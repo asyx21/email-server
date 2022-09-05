@@ -10,28 +10,34 @@ class EmailProvider {
   constructor({
     service, host, port, auth, secure = true,
   }) {
-    this.transporter = null;
-    nodemailer.createTestAccount()
-      .then((testAccount) => {
-        const options = {
-          secure, // true for 465, false for other ports
-          auth: auth || {
-            user: testAccount.user,
-            pass: testAccount.pass,
-          },
-        };
-        if (service) {
-          options.service = service;
-        } else {
-          options.host = host || testAccount.imap.host;
-          options.port = port || testAccount.imap.port;
-        }
-        this.transporter = nodemailer.createTransport(options);
-      })
-      .catch((err) => {
-        if (process.env.DEVELOP === 'dev') console.error('[ERROR]: Creating mailer instance', err);
-        else console.error('[ERROR]: Creating mailer instance');
-      });
+    this.transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: auth.user,
+        pass: auth.pass,
+      },
+    });
+    // nodemailer.createTestAccount()
+    //   .then((testAccount) => {
+    //     const options = {
+    //       secure, // true for 465, false for other ports
+    //       auth: auth || {
+    //         user: testAccount.user,
+    //         pass: testAccount.pass,
+    //       },
+    //     };
+    //     if (service) {
+    //       options.service = service;
+    //     } else {
+    //       options.host = host || testAccount.imap.host;
+    //       options.port = port || testAccount.imap.port;
+    //     }
+    //     this.transporter = nodemailer.createTransport(options);
+    //   })
+    //   .catch((err) => {
+    //     if (process.env.DEVELOP === 'dev') console.error('[ERROR]: Creating mailer instance', err);
+    //     else console.error('[ERROR]: Creating mailer instance');
+    //   });
   }
 
   async sendEmail(

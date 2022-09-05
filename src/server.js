@@ -12,8 +12,6 @@ app.use(cors({
 const port = process.env.SRV_PORT;
 
 const emailProvider = new emailapi.EmailProvider({
-  host: process.env.HOST,
-  port: process.env.SMTP_PORT,
   auth: {
     user: process.env.ACCOUNT,
     pass: process.env.KEY,
@@ -54,16 +52,17 @@ async function formERC20handler(req, res) {
     from: process.env.EMAIL_SRC,
     to: req.body.email,
     text: `Congrats !
-    
-    You just created your own cryptocurrency on Mumbai Polygon Chain.
-    Token: ${req.body.name}
-    Symbol: ${req.body.symbol}
-    
-    You can visit the blockchain explorer here: ${req.body.explorerLink}
-    
-    See you soon !
-    
-    Real Executive Dev Team`,
+
+You just created your own cryptocurrency on Mumbai Polygon Chain !
+
+Token: ${req.body.name}
+Symbol: ${req.body.symbol}
+
+You can visit the blockchain explorer here: ${req.body.explorerLink}
+
+See you soon !
+
+Real Executive Dev Team`,
   }, (err, info) => {
     if (process.env.NODE_ENV === 'dev') console.info('[INFO]: sendEmail answer:', info);
     if (err) {
@@ -82,16 +81,16 @@ async function formNFThandler(req, res) {
     from: process.env.EMAIL_SRC,
     to: req.body.email,
     text: `Congrats !
-    
-    You just created your own NFT on Mumbai Polygon Chain.
-    Token: ${req.body.name}
-    Symbol: ${req.body.symbol}
-    
-    You can visit the blockchain explorer here: ${req.body.explorerLink}
-    
-    See you soon !
-    
-    Real Executive Dev Team`,
+
+You just created your own NFT on Mumbai Polygon Chain.
+Token: ${req.body.name}
+Symbol: ${req.body.symbol}
+
+You can visit the blockchain explorer here: ${req.body.explorerLink}
+
+See you soon !
+
+Real Executive Dev Team`,
   }, (err, info) => {
     if (process.env.NODE_ENV === 'dev') console.info('[INFO]: sendEmail answer:', info);
     if (err) {
