@@ -5,9 +5,9 @@ const emailapi = require('./emailapi');
 
 const app = express();
 app.use(express.json());
-// app.use(cors({
-//   origin: process.env.ORIGIN,
-// }));
+app.use(cors({
+  origin: process.env.ORIGIN,
+}));
 
 const port = process.env.SRV_PORT;
 
