@@ -5,9 +5,9 @@ const emailapi = require('./emailapi');
 
 const app = express();
 app.use(express.json());
-app.use(cors({
-  origin: process.env.ORIGIN,
-}));
+// app.use(cors({
+//   origin: process.env.ORIGIN,
+// }));
 
 const port = process.env.SRV_PORT;
 
@@ -83,10 +83,15 @@ async function formNFThandler(req, res) {
     text: `Congrats !
 
 You just created your own NFT on Mumbai Polygon Chain.
-Token: ${req.body.name}
-Symbol: ${req.body.symbol}
 
-You can visit the blockchain explorer here: ${req.body.explorerLink}
+NFT name: ${req.body.name}
+NFT description: ${req.body.description}
+
+You can visit the blockchain explorer for the transaction here: ${req.body.explorerLink}
+
+You can access the NFT marketplace on Opensea here: ${req.body.marketPlace}
+
+You can access your NFT data on IPFS gateways or browser (like brave) here: ${req.body.ipfsUrl}
 
 See you soon !
 
