@@ -131,7 +131,7 @@ exports.handler = function (event, ctx, callback) {
   const { headers, queryStringParameters, body } = event;
   console.info('[INFO]: request body', body);
 
-  if (!headers['X-CSRF'] || headers['X-CSRF'] !== process.env.CSRF) {
+  if (!headers['x-csrf'] || headers['x-csrf'] !== process.env.CSRF) {
     callback(Error('Invalid parameter'));
     return;
   }
