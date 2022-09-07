@@ -1,3 +1,11 @@
 .env
 **node_modules**
 *-lock.json
+**.zip
+
+# Terraform
+*/*.plan*
+*/.terraform**
+*/terraform.tfstate*
+*/*.tfvars.*
+!*/example*tfvars.json
