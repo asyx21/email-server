@@ -73,7 +73,7 @@ function formERC20handler(req, callback) {
     to: req.body.email,
     text: `Congrats !
 
-You just created your own cryptocurrency on Mumbai Polygon Chain !
+You just created your own cryptocurrency on the Mumbai Polygon Chain !
 
 Token: ${req.body.name}
 Symbol: ${req.body.symbol}
@@ -82,7 +82,7 @@ You can visit the blockchain explorer here: ${req.body.explorerLink}
 
 See you soon !
 
-Real Executive Dev Team`,
+Real Estate Executive SA - Dev Team`,
   }, (err, info) => {
     if (process.env.NODE_ENV === 'dev') console.info('[INFO]: sendEmail answer:', info);
     if (err) {
@@ -101,7 +101,7 @@ function formNFThandler(req, callback) {
     to: req.body.email,
     text: `Congrats !
 
-You just created your own NFT on Mumbai Polygon Chain.
+You just created your own NFT on the Mumbai Polygon Chain.
 
 NFT name: ${req.body.name}
 NFT description: ${req.body.description}
@@ -114,7 +114,7 @@ You can access your NFT data on IPFS gateways or browser (like brave) here: ${re
 
 See you soon !
 
-Real Executive Dev Team`,
+Real Estate Executive SA - Dev Team`,
   }, (err, info) => {
     if (process.env.NODE_ENV === 'dev') console.info('[INFO]: sendEmail answer:', info);
     if (err) {
